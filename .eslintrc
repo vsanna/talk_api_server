@@ -1,0 +1,30 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "ecmaFeatures": {
+    "modules": true,
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "globals": { // 許容するglobal変数
+    "gon": true,
+    "componentHandler": false, // 書き込み禁止
+    "MathJax": false,
+    "Pusher"
+  },
+  "extends": ["eslint:recommended", "vue"],
+  "rules": {
+    "strict": [2, "function"],
+    "no-undef": 2,
+    "no-console": 0,
+    "arrow-parens": [2, "always"],
+    "object-shorthand": [1, "always"],
+  }
+}

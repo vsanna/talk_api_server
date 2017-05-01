@@ -1,0 +1,132 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+    background: #f2f2f8;
+}
+
+.container {
+    width: 300px;
+    margin: 0 auto;
+    max-width: 90vw;
+}
+
+.chat {
+    position: relative;
+    height: 400px;
+    max-height: calc(100vh - 100px);
+    border: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    background:  rgba(27, 155, 179, 0.6);
+    .messages {
+        flex: 1;
+        height: calc(100% - 40px);
+        overflow: scroll;
+        padding: 24px;
+        box-sizing: border-box;
+    }
+}
+
+
+form.text {
+    height: 40px;
+    display: flex;
+    border-top: 1px solid lightgray;
+    background: #fff;
+
+    button {
+        min-width: 50px;
+        display: block;
+        width: 50px;
+        background: #38abc1;
+        border: none;
+        font-size: 12px;
+        margin: 4px;
+        border-radius: 3px;
+        color: #fff;
+        &:disabled {
+            background: lightgray;
+        }
+    }
+
+    .input {
+        flex: 1;
+        border: 1px solid transparent;
+        padding: 0 8px;
+        font-size: 14px;
+        &:disabled {
+            color: lightgray;
+        }
+        &:focus,
+        &:active {
+            outline: none;
+            background: rgba(137, 233, 255, 0.33);
+        }
+    }
+}
+
+.loading {
+    position: absolute;
+    display: flex;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #fff;
+    animation: tremble 0.1s infinite;
+}
+
+
+
+
+.message-wrapper {
+    width: 100%;
+    margin-bottom: 8px;
+    display: flex;
+    .message {
+        border: 1px solid #77ef79;
+        background: #77ef79;
+        border-radius: 3px;
+        padding: 6px 8px;
+        font-size: 12px;
+        max-width: 60%;
+        margin-bottom: 12px;
+        width: 100%;
+    }
+
+    &.right {
+        justify-content: flex-end;
+    }
+    &.left {
+        justify-content: flex-start;
+    }
+    &.self {
+        justify-content: center;
+        margin-bottom: 24px;
+        .message {
+            background: #fff;
+            border: none;
+        }
+    }
+}
+
+
+
+
+@keyframes tremble {
+    0% {
+        transform: translate3d(2px, 2px, 0);
+    }
+    50% {
+        transform: translate3d(-2px, -2px, 0);
+    }
+    100% {
+        transform: translate3d(0px, 0px, 0);
+    }
+}
+

@@ -1,0 +1,17 @@
+<div class="container" id="app">
+  <h1>chat with me!</h1>
+  <div class="chat">
+    <span class="loading" v-show="loading">loading...</span>
+    <div class="messages">
+      <div class="message-wrapper"
+           :class="m.type"
+           v-for="m in messages">
+        <div class="message">{{m.body}}</div>
+      </div>
+    </div>
+    <form class="text" @submit.prevent="send">
+      <input type="text" class="input" v-model="input">
+      <button @click="send" :disabled="loading">送信</button>
+    </form>
+  </div>
+</div>
